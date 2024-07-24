@@ -18,6 +18,10 @@ async def chatgpt_reply(update: Update, context):
 
     # route a response to Telegram
     await update.message.reply_text(reply)   
+
+    user = update.message["from"]
+    name = user["first_name"]
+    username = user["username"]
     
-    print("user:", text)
+    print(f"user {name} - {username}:", text)
     print("assistant:", reply)
